@@ -1,0 +1,282 @@
+:root {
+    --primary: #2e7d32;      /* Hijau Daun Pertanian Modern */
+    --primary-dark: #1b5e20;
+    --accent: #f57c00;       /* Orange - Kontras Tinggi untuk Tombol CTA Belanja */
+    --text-color: #2c3e50;
+    --bg-light: #f9fbf9;     /* Background bersih kemerahan hijau tipis */
+    --card-shadow: 0 10px 30px rgba(46, 125, 50, 0.05);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 15px 0;
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+.logo span { color: var(--accent); }
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+.nav-menu a:hover { color: var(--primary); }
+
+/* HERO BANNER */
+.hero {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    padding: 80px 0;
+    text-align: center;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: 40px;
+}
+.hero h1 {
+    font-size: 40px;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+/* CARI & FILTER */
+.search-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    gap: 10px;
+}
+.search-box input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+}
+.search-box input:focus { border-color: var(--primary); }
+.filter-container {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+.filter-btn {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+.filter-btn.active, .filter-btn:hover {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+/* SECTION JUDUL */
+.section-title {
+    font-size: 24px;
+    color: var(--primary-dark);
+    margin: 40px 0 20px;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
+}
+
+/* GRID PRODUK */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+.product-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.product-card:hover { transform: translateY(-5px); }
+.product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--accent);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.product-info h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    height: 48px;
+    overflow: hidden;
+}
+.product-desc {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    height: 60px;
+    overflow: hidden;
+}
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+.product-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+}
+.product-rating {
+    color: #f1c40f;
+    font-size: 14px;
+    font-weight: 600;
+}
+.btn-affiliate {
+    display: block;
+    text-align: center;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+.btn-affiliate:hover { background: #d35400; }
+
+/* NEWSLETTER & PAGES */
+.newsletter-section {
+    background: var(--primary-dark);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 50px 0;
+}
+.newsletter-form {
+    display: flex;
+    max-width: 500px;
+    margin: 20px auto 0;
+    gap: 10px;
+}
+.newsletter-form input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+}
+.newsletter-form button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.static-page {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    margin: 40px 0;
+}
+.static-page h2 { color: var(--primary-dark); margin-bottom: 20px;}
+.static-page p { margin-bottom: 15px; }
+
+/* FOOTER */
+footer {
+    background: #1a301c;
+    color: #b0bec5;
+    padding: 60px 0 20px;
+    margin-top: 60px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+.footer-grid h3, .footer-grid h4 { color: white; margin-bottom: 15px; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { color: #b0bec5; text-decoration: none; }
+.footer-links a:hover { color: white; }
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #2e4a31;
+    font-size: 14px;
+}
+
+/* RESPONSIVE UNTUK HP ANDROID */
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; gap: 15px; }
+    .nav-menu a { margin: 0 10px; font-size: 14px; }
+    .hero h1 { font-size: 28px; }
+    .hero p { font-size: 14px; }
+    .newsletter-form { flex-direction: column; }
+    .static-page { padding: 20px; }
+}
