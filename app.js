@@ -1,10 +1,24 @@
 // State Aplikasi global
 let currentCategory = 'all';
 let searchQuery = '';
+let AGRI_DATA = {
+    categories: [],
+    products: [],
+    articles: [],
+    diseases: [],
+    pests: []
+};
 
+async function loadData() {
+    const response = await fetch("https://script.google.com/macros/s/AKfycbwGhwR4TtrXI3_WEBzrKhf28S65ePab3yMsMdothv1sH3nNG-MUNXwwN7H0d6MxB8mfZA/exec");
+
+    AGRI_DATA = await response.json();
+
+    navigate('home');
+}
 // Fungsi Inisialisasi Pertama Kali
 document.addEventListener("DOMContentLoaded", () => {
-    navigate('home'); // Secara default buka beranda
+    loadData();
 });
 
 // ROUTING SEDERHANA (Pindah Halaman tanpa Reload)
