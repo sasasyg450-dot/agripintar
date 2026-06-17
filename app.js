@@ -10,9 +10,19 @@ let AGRI_DATA = {
 };
 
 async function loadData() {
+
+    const cachedData = localStorage.getItem("agriData");
+
+    if (cachedData) {
+        AGRI_DATA = JSON.parse(cachedData);
+        navigate('home');
+    }
+
     const response = await fetch("https://script.google.com/macros/s/AKfycbwGhwR4TtrXI3_WEBzrKhf28S65ePab3yMsMdothv1sH3nNG-MUNXwwN7H0d6MxB8mfZA/exec");
 
     AGRI_DATA = await response.json();
+
+    localStorage.setItem("agriData", JSON.stringify(AGRI_DATA));
 
     navigate('home');
 }
