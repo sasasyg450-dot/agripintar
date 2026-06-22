@@ -7,9 +7,6 @@ const AGRI_DATA = {
         { id: 'benih', name: 'Benih' },
         { id: 'alat', name: 'Alat Pertanian' },
         { id: 'mesin', name: 'Mesin Pertanian' },
-        { id: 'pakan', name: 'Pakan Ternak' },
-        { id: 'obat-hewan', name: 'Obat Hewan' },
-        { id: 'perlengkapan-ternak', name: 'Perlengkapan Peternakan' },
         { id: 'organik', name: 'Produk Organik' }
     ],
 
